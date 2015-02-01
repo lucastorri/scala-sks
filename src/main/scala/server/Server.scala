@@ -49,19 +49,3 @@ class Handler(server: Server) extends AbstractHandler {
   }
 
 }
-
-class GetHandler extends AbstractHandler {
-
-  override def handle(target: String, baseRequest: Request, request: HttpServletRequest, response: HttpServletResponse): Unit = {
-    baseRequest.setHandled(true)
-  }
-
-}
-
-class AddHandler extends AbstractHandler {
-
-  override def handle(target: String, baseRequest: Request, request: HttpServletRequest, response: HttpServletResponse): Unit = {
-    baseRequest.setHandled(true)
-  }
-
-}
