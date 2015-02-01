@@ -6,8 +6,7 @@ case class Config(port: Int, store: Store)
 object sks extends App {
 
   val cfg = parseArgs()
-  new Server(cfg.port, cfg.store)
-
+  Server.startAndListen(cfg.port, cfg.store)
 
   def parseArgs(): Config = {
 

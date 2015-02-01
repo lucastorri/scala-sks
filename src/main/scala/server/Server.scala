@@ -8,11 +8,21 @@ import store.Store
 
 case class Server(port: Int, store: Store) {
 
-  {
+  private val server = {
     val server = new Jetty(port)
     server.setHandler(new Handler(this))
     server.start()
-    server.join()
+    server
+  }
+
+  def join() = server.join()
+
+}
+object Server {
+
+  def startAndListen(port: Int, store: Store): Unit = {
+    val s = Server(port, store)
+    s.join()
   }
 
 }
